@@ -49,14 +49,14 @@ public class Frame {
 	}
 	
 	public void addBonusPointsToFrame(Character bonus){
-		if(this.firstBonus != null){
+		if(this.firstBonus == null){
 			this.firstBonus = bonus;
-		}else if(this.secondBonus != null){
+		}else if(this.secondBonus == null){
 			this.secondBonus = bonus;
 		}
 		
 	}
-	
+
 	public int getFirstBonus(){
 		if(this.firstBonus != null){
 			if (this.firstBonus.equals('X')) {
@@ -94,7 +94,25 @@ public class Frame {
 		return false;
 	}
 	
-	public int getActualFrameScore(){
+	public int getFrameFirstTrie(){
+		if (this.firstTrie.equals('X')) {
+			return 10;
+		} else if (Character.isDigit(this.firstTrie)) {
+			return Integer.parseInt(firstTrie.toString());
+		} 
+	return 0;
+	}
+	
+	public int getFrameSecondTrie(){
+		if (this.secondTrie.equals('/')) {
+			return 10 - Integer.parseInt(this.firstTrie.toString());
+		} else if (Character.isDigit(this.secondTrie)) {
+			return Integer.parseInt(this.secondTrie.toString());
+		} 
+		return 0;
+	}
+	
+	public int getTemporalFrameScore(){
 		return this.frameScore;
 	}
 	

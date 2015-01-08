@@ -1,47 +1,31 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
 import Bowling.Bowling;
 
 public class test {
-
-	/*@Test
-	public void testStrike() {
-		assertEquals(10,new Bowling().score("X"));
-	}
-	
-	@Test
-	public void testNumber() {
-		assertEquals(4,new Bowling().score("4"));
-	}
 	
 	@Test
 	public void testMiss() {
-		assertEquals(0,new Bowling().score("-"));
+		assertEquals(90,new Bowling().calculateScore("9-9-9-9-9-9-9-9-9-9-"));
 	}
 	
 	@Test
-	public void test2numbers() {
-		assertEquals(8,new Bowling().score("53"));
+	public void testALLStrike() {
+		assertEquals(300,new Bowling().calculateScore("XXXXXXXXXXXX"));
 	}
-
+	
 	@Test
 	public void testSpare() {
-		assertEquals(10,new Bowling().score("1/"));
-	}
-	@Test
-	public void testNumberAndMiss() {
-		assertEquals(1,new Bowling().score("1-"));
-	}*/
-	
-	@Test
-	public void testStrike() {
-		assertEquals(85,new Bowling().calculateScore("X4-53442-33443/4312"));
+		assertEquals(150,new Bowling().calculateScore("5/5/5/5/5/5/5/5/5/5/5"));
 	}
 	
+	@Test
+	public void testNormalGame() {
+		assertEquals(74,new Bowling().calculateScore("X4-53442-33443/4312"));
+	}
 
 }
